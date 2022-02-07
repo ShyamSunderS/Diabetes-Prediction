@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Page</title>
+    <style>
+        body {
+            background-image: url("{% static 'home.png' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .main{
+            position: fixed;
+            top: 50px;
+            left: 150px;
+            width: 450px;
+            height: 500px;
+            background-image: url("{% static 'ResultPage.png' %}");
+            background-color:#ffffff;
+            border-radius: 25px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #171616;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: #0062ff;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div align = 'center' class = "main">
+        <h1><u>ENTER THE FOLLOWING INFORMATION</u></h1>
+        <form action="result">
+            <table>
+                <tr>
+                    <td align="left"><b>Pregnancies: </b></td>
+                    <td align="left" height="35"><input type="number" name = "n1" min="0" max="20 " placeholder="eg.1"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>Glucose(mg/dL):</b> </td>
+                    <td align="left" height="35"><input type="number" name = "n2" min="50" max="200 " placeholder="eg. 90"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>Blood Pressure(mmHg):</b></td>
+                    <td align="left" height="35"><input type="number" name = "n3" min="50" max="200 " placeholder="eg. 80"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>Skin Thickness(mm):</b></td>
+                    <td align="left" height="35"><input type="number" name = "n4" min="10" max="50 " placeholder="eg.20"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>Insulin(IU/mL):</b> </td>
+                    <td align="left" height="35"><input type="number" name = "n5" min="20" max="900 " placeholder="eg.100"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>BMI(kg/m²):</b> </td>
+                    <td align="left" height="35"><input type="number" name = "n6" min="20" max="45 "  step = "0.1"placeholder="eg.24.5"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>Diabetes pedigree function:</b></td>
+                    <td align="left" height="35"><input type="number" name = "n7" min="0.1" max="3 " step="0.001" placeholder="eg.0.3"></td>
+                </tr>
+
+                <tr>
+                    <td align="left"><b>Age: </b></td>
+                    <td align="left" height="35"><input type="number" name = "n8" min="15" max="100 " placeholder="eg.25"></td>
+                </tr>
+            </table>
+            <input type="submit" value = "SUBMIT" style="color:black;">
+            <br>
+        </form>
+        <br>
+        <b>RESULT: {{result2}}</b>
+    </div>
+
+</body>
+</html>
